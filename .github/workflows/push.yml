@@ -12,14 +12,17 @@ jobs:
     name: figma icon automation
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v4
+    - uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
       with:
-        node-version: '10.x'
+        version: 6.10.0
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'pnpm'
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
     - run: "echo Output fg_url: ${{ secrets.FIGMA_FILE_URL }}"
-    - run: npm install
+    - run: pnpm install
     - name: Figma Action
       uses: primer/figma-action@v1.0.0-alpha.2
       with:
