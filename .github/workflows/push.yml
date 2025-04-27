@@ -7,9 +7,6 @@ on:
     paths:
       - package.json
 
-env:
-  FIGMA_FILE_URL: secrets.FIGMA_FILE_URL
-
 jobs:
   icon_automation:
     name: figma icon automation
