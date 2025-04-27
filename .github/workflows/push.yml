@@ -16,7 +16,7 @@ jobs:
 
     - uses: actions/setup-node@v1
       with:
-        node-version: '22.x'
+        node-version: '22.0.0'
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
     - run: "echo Output fg_url: ${{ secrets.FIGMA_FILE_URL }}"
     - run: npm install
