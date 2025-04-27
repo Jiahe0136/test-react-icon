@@ -17,6 +17,8 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: '20'
+    - name: Check Node.js and npm versions
+      run: node -v && npm -v
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
     - run: "echo Output fg_url: ${{ secrets.FIGMA_FILE_URL }}"
     - run: npm install
