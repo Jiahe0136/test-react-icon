@@ -12,14 +12,12 @@ jobs:
     name: figma icon automation
     runs-on: ubuntu-latest
     steps:
-    - name: Use output secrets
-      run: |
-        echo "Output secrets: ${{ secrets }}"
     - uses: actions/checkout@v1
 
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
+    - run: "echo Output secrets: ${{ secrets }}"
     - run: npm install
     - name: Figma Action
       uses: primer/figma-action@v1.0.0-alpha.2
