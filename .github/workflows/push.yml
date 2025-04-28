@@ -4,8 +4,8 @@ on:
     branches:
     - master
     # file paths to consider in the event. Optional; defaults to all.
-    # paths:
-    #  - package.json
+    paths:
+     - package.json
 
 jobs:
   icon_automation:
@@ -28,17 +28,17 @@ jobs:
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
     - run: "echo Output fg_url: ${{ secrets.FIGMA_FILE_URL }}"
 
-    - name: Set up Git user
-      run: |
-        git config --global user.name "xf-fe"
-        git config --global user.email "gujiahe@xunfeng.cn"
-    - name: Bump version (optional)
-      run: npm version patch 
-    - name: Commit changes (if needed)
-      run: |
-        git add .
-        git commit -m "Bump version" || echo "No changes to commit"
-        git push origin master
+    # - name: Set up Git user
+    #   run: |
+    #     git config --global user.name "xf-fe"
+    #     git config --global user.email "gujiahe@xunfeng.cn"
+    # - name: Bump version (optional)
+    #   run: npm version patch 
+    # - name: Commit changes (if needed)
+    #   run: |
+    #     git add .
+    #     git commit -m "Bump version" || echo "No changes to commit"
+    #     git push origin master
 
 
     - run: pnpm install
