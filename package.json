@@ -1,6 +1,9 @@
 {
   "name": "@mytest/icon",
   "version": "0.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Icon automation workflow with Figma",
   "main": "dist/juuust-react-icon.cjs.js",
   "module": "dist/juuust-react-icon.esm.js",
