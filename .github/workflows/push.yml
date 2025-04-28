@@ -38,6 +38,7 @@ jobs:
     - run: npm run generate
     - run: npm run build:bundle
     - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+    - run: "echo Output gh_token: ${{secrets.NPM_AUTH_TOKEN}}"
     - name: Publish to npm------
       run: npm publish
       env:
