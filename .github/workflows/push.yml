@@ -31,8 +31,8 @@ jobs:
     - name: Figma Action
       run: npm run fetch
       # uses: primer/figma-action@v1.0.0-alpha.2
-      with:
-        args: "format=svg outputDir=./src/"
+      # with:
+      #   args: "format=svg outputDir=./src/"
       env:
         FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
         FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
