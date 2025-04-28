@@ -12,11 +12,12 @@ jobs:
     name: figma icon automation
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        node-version: '20'
+        node-version: ${{ matrix.node-version }}
+
     - name: Check Node.js and npm versions
       run: node -v && npm -v
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
