@@ -30,8 +30,8 @@ jobs:
 
     - name: Set up Git user
       run: |
-        git config --global user.name "Your Name"
-        git config --global user.email "youremail@example.com"
+        git config --global user.name "xf-fe"
+        git config --global user.email "gujiahe@xunfeng.cn"
     - name: Bump version (optional)
       run: npm version patch 
     - name: Commit changes (if needed)
