@@ -38,9 +38,11 @@ jobs:
     - run: npm run generate
     - run: npm run build:bundle
     - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-    - run: npm publish
+    - name: Publish to npm------
+      run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
     - run: npm run build
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.2.5
