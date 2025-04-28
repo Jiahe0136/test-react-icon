@@ -27,6 +27,20 @@ jobs:
       run: node -v && npm -v && pnpm -v
     - run: "echo Output gh_token: ${{ secrets.GITHUB_TOKEN }}"
     - run: "echo Output fg_url: ${{ secrets.FIGMA_FILE_URL }}"
+
+    - name: Set up Git user
+      run: |
+        git config --global user.name "Your Name"
+        git config --global user.email "youremail@example.com"
+    - name: Bump version (optional)
+      run: npm version patch 
+    - name: Commit changes (if needed)
+      run: |
+        git add .
+        git commit -m "Bump version" || echo "No changes to commit"
+        git push origin master
+
+
     - run: pnpm install
     - name: Figma Action
       run: npm run fetch
