@@ -1,6 +1,6 @@
 {
-  "name": "@mytest/icon",
-  "version": "0.0.2",
+  "name": "xf-public-icon",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
